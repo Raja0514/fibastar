@@ -5,12 +5,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiba Star Technical Services L.L.C</title>
-    <link rel="stylesheet" href="../dist/output.css">
+    <!-- Use the compiled CSS from your build process -->
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Fiba Star Technical Services - Official ISP of Flow Europe GmbH in Middle East. Precision waterjet cutting, technical maintenance, and engineering solutions.">
     <meta name="keywords" content="waterjet cutting, technical services, Flow Europe, industrial maintenance, Dubai">
+    
+    <style>
+        /* Add critical CSS here for faster loading */
+        .theme-transition * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .slider-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slide-1 {
+            background-image: url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        }
+
+        .slide-2 {
+            background-image: url("https://images.unsplash.com/photo-1581094794358-1b3d55fe3253?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        }
+
+        .slide-3 {
+            background-image: url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        }
+
+        .slide-4 {
+            background-image: url("https://images.unsplash.com/photo-1581094794358-1b3d55fe3253?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        }
+
+        .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 20;
+            font-size: 1.5rem;
+        }
+
+        .slider-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-prev {
+            left: 30px;
+        }
+
+        .slider-next {
+            right: 30px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .image-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .image-modal-content {
+            background: white;
+            border-radius: 0.75rem;
+            max-width: 56rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-modal.show .image-modal-content {
+            transform: scale(1);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-text {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FIXED: Map container full width */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .newsletter-message {
+            transition: all 0.3s ease;
+        }
+
+        .section {
+            scroll-margin-top: 80px;
+        }
+
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                height: 80vh;
+            }
+
+            .slider-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .slider-prev {
+                left: 15px;
+            }
+
+            .slider-next {
+                right: 15px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+
+            .whatsapp-text {
+                bottom: 80px;
+                right: 20px;
+                font-size: 12px;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-container {
+                height: 70vh;
+            }
+
+            .slider-nav {
+                width: 45px;
+                height: 45px;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-white dark:bg-gray-900 theme-transition">
     <!-- Header Section -->
@@ -187,7 +536,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service cards remain the same as your original code -->
                 <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-tools text-primary-600 dark:text-primary-400 text-2xl"></i>
@@ -212,21 +560,819 @@
                     </ul>
                 </div>
 
-                <!-- Add other service cards here (same as your original) -->
-                <!-- ... -->
+                <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-purple-600 dark:text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Engineering Solutions</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Custom engineering solutions designed to optimize processes, improve efficiency, and solve complex technical challenges.
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Process Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Technical Consulting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>System Integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hard-hat text-green-600 dark:text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Installation Services</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Professional installation of industrial equipment, machinery, and technical systems with precision and expertise.
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Equipment Installation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>System Commissioning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Safety Compliance</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tint text-blue-600 dark:text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Waterjet Cutting</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Precision waterjet cutting services for a wide range of materials including metal, stone, glass, and composites.
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>High-Precision Cutting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Multi-Material Capability</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Complex Shape Cutting</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-red-600 dark:text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Equipment Servicing</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Specialized servicing and maintenance for Flow waterjet systems and other industrial equipment.
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Flow Equipment Service</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Parts Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Performance Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="service-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-yellow-600 dark:text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Technical Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Ongoing technical support and training to ensure your team can operate equipment efficiently and safely.
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>24/7 Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Operator Training</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Troubleshooting</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Rest of your HTML remains the same -->
-    <!-- Gallery, Contact, Footer sections -->
+    <!-- Gallery Section -->
+   <section id="gallery" class="bg-gray-50 dark:bg-gray-800 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Gallery</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Explore our work through images showcasing our waterjet cutting technology and technical services.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with 12 Image Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+                <!-- Image 1 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-primary-400 to-primary-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Waterjet Machine</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">High-precision waterjet cutting equipment</p>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Metal Cutting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Precision cutting of metal materials</p>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Technical Maintenance</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Regular maintenance of industrial equipment</p>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-red-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Installation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Professional equipment installation</p>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Precision Work</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">High-accuracy cutting results</p>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Industrial Equipment</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">State-of-the-art machinery</p>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-teal-400 to-blue-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Expert Team</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Our skilled technical team</p>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-red-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Finished Products</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">High-quality finished components</p>
+                    </div>
+                </div>
+
+                <!-- Image 9 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Quality Control</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Rigorous quality assurance processes</p>
+                    </div>
+                </div>
+
+                <!-- Image 10 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Custom Solutions</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Tailored technical solutions</p>
+                    </div>
+                </div>
+
+                <!-- Image 11 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Project Management</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Efficient project coordination</p>
+                    </div>
+                </div>
+
+                <!-- Image 12 -->
+                <div class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-expand text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Client Collaboration</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Working closely with our clients</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Video Section -->
+            <div class="mt-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Video Showcase</h2>
+                    <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Watch our waterjet cutting technology in action and learn more about our services.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Video 1 - FIXED YouTube URL -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Waterjet Cutting Demonstration</h3>
+                        <div class="video-wrapper mb-4">
+                            <iframe src="https://www.youtube.com/embed/oVjLfWIMe" title="Waterjet cutting demonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">See how our high-precision waterjet cutting technology works with various materials.</p>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Technical Maintenance Process</h3>
+                        <div class="video-wrapper mb-4">
+                            <iframe src="https://www.youtube.com/embed/oVjLfWIMe7g" title="Technical maintenance process" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">Learn about our comprehensive maintenance procedures for industrial equipment.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                        <i class="fab fa-youtube mr-2"></i>
+                        <span>Visit Our YouTube Channel</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section with Map -->
+    <section id="contact" class="section py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Ready to start your next project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                </p>
+            </div>
+
+            <!-- Map Section - FIXED: Full width -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Find Us</h3>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178509825885!2d55.27218741500915!3d25.19719698389345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1645000000000!5m2!1sen!2sae"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Fiba Star Technical Services Location"
+                    >
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white mb-1">Our Office</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Dubai, United Arab Emirates
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white mb-1">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    +971 50 123 4567
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white mb-1">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    info@fibastar.example.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-red-100 dark:bg-red-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-clock text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white mb-1">Business Hours</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Monday - Friday: 8:00 AM - 6:00 PM<br />
+                                    Saturday: 9:00 AM - 2:00 PM<br />
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 dark:text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900 hover:text-pink-600 dark:hover:text-pink-400 transition-colors duration-300" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Send us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" placeholder="Project Inquiry" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                            <span id="submit-text">Send Message</span>
+                            <div id="submit-loading" class="loading ml-2 hidden"></div>
+                        </button>
+                        <div id="form-message" class="hidden text-center p-3 rounded-lg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-purple-600 rounded-lg flex items-center justify-center mr-2">
+                            <span class="text-white font-bold">F</span>
+                        </div>
+                        <span class="text-xl font-bold">Fiba Star</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Transforming ideas into technical reality through innovative solutions and exceptional engineering.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="text-gray-400 hover:text-white transition-colors duration-300">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Technical Maintenance</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Engineering Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Installation Services</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Waterjet Cutting</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates.
+                    </p>
+                    <div class="flex mb-2">
+                        <input type="email" id="newsletter-email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" required>
+                        <button type="button" id="newsletter-btn" class="bg-primary-600 hover:bg-primary-700 px-4 rounded-r-lg transition-colors duration-300 flex items-center justify-center">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div id="newsletter-message" class="newsletter-message text-sm mt-2 hidden"></div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>
+                    &copy; 2025 Fiba Star Technical Services L.L.C. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <div class="image-modal-content">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-bold text-gray-800 dark:text-white" id="modal-title">Image Preview</h3>
+                <button id="modal-close" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-4 flex justify-center">
+                <div class="w-full h-96 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center text-white text-xl font-bold">
+                    Image Preview
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971501234567" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-text">Chat with us</div>
 
     <!-- JavaScript -->
     <script>
-        // Your JavaScript code remains exactly the same
         document.addEventListener("DOMContentLoaded", function () {
-            // All your existing JavaScript code
-            // Theme functionality, slider, modals, etc.
+            // Theme functionality
+            const themeToggle = document.getElementById("theme-toggle");
+            const themeIcon = document.getElementById("theme-icon");
+
+            function setTheme(theme) {
+                if (theme === "dark") {
+                    document.documentElement.classList.add("dark");
+                    themeIcon.classList.remove("fa-moon");
+                    themeIcon.classList.add("fa-sun");
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                    themeIcon.classList.remove("fa-sun");
+                    themeIcon.classList.add("fa-moon");
+                    localStorage.setItem("theme", "light");
+                }
+            }
+
+            themeToggle.addEventListener("click", function () {
+                if (document.documentElement.classList.contains("dark")) {
+                    setTheme("light");
+                } else {
+                    setTheme("dark");
+                }
+            });
+
+            // Set initial theme
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                setTheme("dark");
+            }
+
+            // NEWSLETTER FUNCTIONALITY
+            const newsletterBtn = document.getElementById("newsletter-btn");
+            const newsletterEmail = document.getElementById("newsletter-email");
+            const newsletterMessage = document.getElementById("newsletter-message");
+
+            if (newsletterBtn) {
+                newsletterBtn.addEventListener("click", function() {
+                    const email = newsletterEmail.value.trim();
+                    
+                    if (!email) {
+                        showNewsletterMessage("Please enter your email address.", "error");
+                        return;
+                    }
+                    
+                    if (!isValidEmail(email)) {
+                        showNewsletterMessage("Please enter a valid email address.", "error");
+                        return;
+                    }
+                    
+                    const originalContent = newsletterBtn.innerHTML;
+                    newsletterBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    newsletterBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        newsletterBtn.innerHTML = originalContent;
+                        newsletterBtn.disabled = false;
+                        showNewsletterMessage("Thank you for subscribing to our newsletter!", "success");
+                        newsletterEmail.value = "";
+                    }, 1500);
+                });
+                
+                newsletterEmail.addEventListener("keypress", function(e) {
+                    if (e.key === "Enter") {
+                        newsletterBtn.click();
+                    }
+                });
+            }
+
+            function showNewsletterMessage(message, type) {
+                newsletterMessage.textContent = message;
+                newsletterMessage.className = "newsletter-message text-sm mt-2";
+                
+                if (type === "success") {
+                    newsletterMessage.classList.add("text-green-400");
+                } else if (type === "error") {
+                    newsletterMessage.classList.add("text-red-400");
+                }
+                
+                newsletterMessage.classList.remove("hidden");
+                
+                setTimeout(() => {
+                    newsletterMessage.classList.add("hidden");
+                }, 5000);
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Modal functionality
+            const imageModal = document.getElementById("image-modal");
+            const modalClose = document.getElementById("modal-close");
+
+            function closeModal() {
+                imageModal.classList.remove("show");
+                setTimeout(() => {
+                    imageModal.classList.add("hidden");
+                }, 300);
+            }
+
+            modalClose.addEventListener("click", closeModal);
+
+            imageModal.addEventListener("click", function(e) {
+                if (e.target === imageModal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape" && imageModal.classList.contains("show")) {
+                    closeModal();
+                }
+            });
+
+            // Gallery items click handler
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const title = this.querySelector('h3').textContent;
+                    document.getElementById('modal-title').textContent = title;
+                    imageModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        imageModal.classList.add('show');
+                    }, 10);
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+                const icon = mobileMenuButton.querySelector("i");
+                if (mobileMenu.classList.contains("hidden")) {
+                    icon.classList.remove("fa-times");
+                    icon.classList.add("fa-bars");
+                } else {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.add("fa-times");
+                }
+            });
+
+            // Close mobile menu when clicking on links
+            document.querySelectorAll("#mobile-menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuButton.querySelector("i").classList.remove("fa-times");
+                    mobileMenuButton.querySelector("i").classList.add("fa-bars");
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Slider functionality
+            const slider = document.getElementById("slider");
+            const prevButton = document.getElementById("prev-slide");
+            const nextButton = document.getElementById("next-slide");
+            const dots = document.querySelectorAll(".slider-dot");
+
+            let currentSlide = 0;
+            const totalSlides = 4;
+
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle("active", index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(currentSlide);
+            }
+
+            nextButton.addEventListener("click", nextSlide);
+            prevButton.addEventListener("click", prevSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => goToSlide(index));
+            });
+
+            // Auto slide
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Pause on hover
+            slider.parentElement.addEventListener("mouseenter", () => {
+                clearInterval(slideInterval);
+            });
+
+            slider.parentElement.addEventListener("mouseleave", () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Contact form submission
+            const contactForm = document.getElementById("contact-form");
+            const submitBtn = document.getElementById("submit-btn");
+            const submitText = document.getElementById("submit-text");
+            const submitLoading = document.getElementById("submit-loading");
+            const formMessage = document.getElementById("form-message");
+
+            if (contactForm) {
+                contactForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    
+                    submitText.textContent = "Sending...";
+                    submitLoading.classList.remove("hidden");
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        contactForm.reset();
+                        formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
+                        formMessage.classList.remove("hidden", "bg-red-100", "text-red-700", "dark:bg-red-900", "dark:text-red-300");
+                        formMessage.classList.add("bg-green-100", "text-green-700", "dark:bg-green-900", "dark:text-green-300");
+                        submitText.textContent = "Send Message";
+                        submitLoading.classList.add("hidden");
+                        submitBtn.disabled = false;
+                        
+                        setTimeout(() => {
+                            formMessage.classList.add("hidden");
+                        }, 5000);
+                    }, 1500);
+                });
+            }
         });
     </script>
 </body>
