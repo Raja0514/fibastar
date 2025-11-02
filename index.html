@@ -23,67 +23,59 @@
 
     <style>
       /* FIXED: Better video wrapper for mobile */
-      .video-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 12px;
-        background: #000; /* Black background while loading */
-      }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000; /* Black background while loading */
+  -webkit-overflow-scrolling: touch;
+}
 
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
-      /* FIXED: Mobile-specific video improvements */
-      @media (max-width: 768px) {
-        .video-wrapper {
-          border-radius: 8px; /* Slightly smaller radius on mobile */
-        }
+/* FIXED: Mobile-specific video improvements */
+@media (max-width: 768px) {
+  .video-wrapper {
+    border-radius: 8px;
+    margin: 0; /* Remove any margins that might cause issues */
+  }
+  
+  /* Ensure proper touch scrolling for mobile */
+  .video-wrapper iframe {
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
-        /* Ensure iframe can be interactive on mobile */
-        iframe {
-          -webkit-overflow-scrolling: touch;
-        }
-      }
+/* FIXED: Extra small device adjustments */
+@media (max-width: 480px) {
+  .video-wrapper {
+    border-radius: 6px;
+  }
+  
+  /* Remove any container padding that might affect video width */
+  .bg-white .video-wrapper,
+  .dark\\:bg-gray-800 .video-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+}
 
-      /* FIXED: Prevent horizontal scrolling on mobile */
-      @media (max-width: 480px) {
-        .video-wrapper {
-          margin-left: -1rem;
-          margin-right: -1rem;
-          width: calc(100% + 2rem);
-          border-radius: 0;
-        }
-
-        .bg-white .video-wrapper,
-        .dark\\:bg-gray-800 .video-wrapper {
-          border-radius: 8px;
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-        }
-      }
-
-      /* Add critical CSS here for faster loading */
-      .theme-transition * {
-        transition: background-color 0.3s ease, color 0.3s ease,
-          border-color 0.3s ease;
-      }
-
-      /* FIXED: Mobile Responsive Slider */
-      .slider-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-      }
+/* FIXED: Ensure videos don't overflow their containers */
+.video-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
 
       /* Mobile-first approach for slider height */
       .slider-container {
@@ -1451,84 +1443,72 @@
         </div>
 
         <!-- YouTube Video Section -->
-        <div class="mt-16">
-          <div class="text-center mb-12">
-            <h2
-              class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
-            >
-              Video Showcase
-            </h2>
-            <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Watch our waterjet cutting technology in action and learn more
-              about our services.
-            </p>
-          </div>
+      <!-- YouTube Video Section -->
+<div class="mt-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+      Video Showcase
+    </h2>
+    <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      Watch our waterjet cutting technology in action and learn more about our services.
+    </p>
+  </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Video 1 -->
-            <div
-              class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
-            >
-              <h3
-                class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4"
-              >
-                Flow Texturing Cutting Demonstration
-              </h3>
-              <div class="video-wrapper mb-4">
-                <iframe
-                  src="https://www.youtube.com/embed/m69JzgPCXvw?si=PBXM_6_wC4T_kVsc"
-                  title="Flow Texturing Cutting Demonstration"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"
-                  style="width: 100%; height: 100%; border: none"
-                ></iframe>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-                See how our high-precision waterjet cutting technology works
-                with various materials.
-              </p>
-            </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Video 1 -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg">
+      <h3 class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4">
+        Flow Texturing Cutting Demonstration
+      </h3>
+      <div class="video-wrapper mb-4">
+        <!-- FIXED: YouTube embed for mobile -->
+        <iframe
+          src="https://www.youtube.com/embed/m69JzgPCXvw?si=PBXM_6_wC4T_kVsc"
+          title="Flow Texturing Cutting Demonstration"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+        See how our high-precision waterjet cutting technology works with various materials.
+      </p>
+    </div>
 
-            <!-- Video 2 -->
-            <div
-              class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
-            >
-              <h3
-                class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4"
-              >
-                Flow - First on Water jet
-              </h3>
-              <div class="video-wrapper mb-4">
-                <iframe
-                  src="https://www.youtube.com/embed/N_go14XzG4w?si=88FB7ffQ-fptytX-"
-                  title="Flow - First on Water jet"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"
-                  style="width: 100%; height: 100%; border: none"
-                ></iframe>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-                Learn about our comprehensive maintenance procedures for
-                industrial equipment.
-              </p>
-            </div>
-          </div>
+    <!-- Video 2 -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg">
+      <h3 class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4">
+        Flow - First on Water jet
+      </h3>
+      <div class="video-wrapper mb-4">
+        <!-- FIXED: YouTube embed for mobile -->
+        <iframe
+          src="https://www.youtube.com/embed/N_go14XzG4w?si=88FB7ffQ-fptytX-"
+          title="Flow - First on Water jet"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+        Learn about our comprehensive maintenance procedures for industrial equipment.
+      </p>
+    </div>
+  </div>
 
-          <div class="text-center mt-8">
-            <a
-              href="https://www.youtube.com/@FlowWaterjetEurope"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
-            >
-              <i class="fab fa-youtube mr-2"></i>
-              <span>Visit Our YouTube Channel</span>
-            </a>
-          </div>
-        </div>
+  <div class="text-center mt-8">
+    <a
+      href="https://www.youtube.com/@FlowWaterjetEurope"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+    >
+      <i class="fab fa-youtube mr-2"></i>
+      <span>Visit Our YouTube Channel</span>
+    </a>
+  </div>
+</div>
       </div>
     </section>
 
