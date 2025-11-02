@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,11 +29,28 @@
           border-color 0.3s ease;
       }
 
+      /* FIXED: Mobile Responsive Slider */
       .slider-container {
         position: relative;
-        height: 100vh;
         width: 100%;
         overflow: hidden;
+      }
+
+      /* Mobile-first approach for slider height */
+      .slider-container {
+        height: 60vh; /* Default for mobile */
+      }
+
+      @media (min-width: 768px) {
+        .slider-container {
+          height: 80vh; /* Tablet */
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .slider-container {
+          height: 100vh; /* Desktop */
+        }
       }
 
       .slider {
@@ -51,22 +69,37 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        position: relative;
       }
 
+      /* FIXED: Better mobile image handling */
       .slide-1 {
         background-image: url("./M200c-4020.png");
+        /* Fallback color if image doesn't load */
+        
       }
 
       .slide-2 {
         background-image: url("./Mach+500+4020_studio_NewLogo.png");
+       
       }
 
       .slide-3 {
         background-image: url("./Mach\ 150\ 4020\ Rendering_view\ 1.png");
+       
       }
 
       .slide-4 {
         background-image: url("./M200c-4020.png");
+  
+      }
+
+      /* Ensure images scale properly on mobile */
+      @media (max-width: 768px) {
+        .slide {
+          background-size: contain; /* Show full image on mobile */
+         
+        }
       }
 
       .slider-overlay {
@@ -79,6 +112,7 @@
         z-index: 1;
       }
 
+      /* FIXED: Mobile-responsive navigation buttons */
       .slider-nav {
         position: absolute;
         top: 50%;
@@ -86,8 +120,6 @@
         background: rgba(0, 0, 0, 0.6);
         color: white;
         border: none;
-        width: 60px;
-        height: 60px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -95,7 +127,55 @@
         cursor: pointer;
         transition: all 0.3s ease;
         z-index: 20;
-        font-size: 1.5rem;
+      }
+
+      /* Mobile sizes */
+      .slider-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      /* Tablet sizes */
+      @media (min-width: 768px) {
+        .slider-nav {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+
+        .slider-prev {
+          left: 20px;
+        }
+
+        .slider-next {
+          right: 20px;
+        }
+      }
+
+      /* Desktop sizes */
+      @media (min-width: 1024px) {
+        .slider-nav {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .slider-prev {
+          left: 30px;
+        }
+
+        .slider-next {
+          right: 30px;
+        }
       }
 
       .slider-nav:hover {
@@ -103,27 +183,27 @@
         transform: translateY(-50%) scale(1.1);
       }
 
-      .slider-prev {
-        left: 30px;
-      }
-
-      .slider-next {
-        right: 30px;
-      }
-
+      /* FIXED: Mobile dots positioning */
       .slider-dots {
         position: absolute;
-        bottom: 30px;
+        bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 10px;
+        gap: 8px;
         z-index: 20;
       }
 
+      @media (min-width: 768px) {
+        .slider-dots {
+          bottom: 30px;
+          gap: 10px;
+        }
+      }
+
       .slider-dot {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.5);
         border: none;
@@ -131,19 +211,67 @@
         transition: all 0.3s ease;
       }
 
+      @media (min-width: 768px) {
+        .slider-dot {
+          width: 12px;
+          height: 12px;
+        }
+      }
+
       .slider-dot.active {
         background: white;
         transform: scale(1.2);
       }
 
+      /* FIXED: Mobile-responsive hero content */
       .hero-content {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-        width: 100%;
+        width: 90%;
         text-align: center;
+        padding: 0 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content h1 {
+          font-size: 4rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-content h1 {
+          font-size: 5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.75rem;
+        }
       }
 
       .gallery-item {
@@ -318,57 +446,59 @@
         transition: all 0.3s ease-in-out;
       }
 
-      @media (max-width: 768px) {
+      /* FIXED: Better mobile adjustments */
+      @media (max-width: 480px) {
         .slider-container {
-          height: 80vh;
+          height: 50vh; /* Even smaller for very small devices */
         }
 
         .slider-nav {
-          width: 50px;
-          height: 50px;
-          font-size: 1.2rem;
+          width: 35px;
+          height: 35px;
+          font-size: 0.9rem;
         }
 
         .slider-prev {
-          left: 15px;
+          left: 5px;
         }
 
         .slider-next {
-          right: 15px;
+          right: 5px;
+        }
+
+        .slider-dots {
+          bottom: 10px;
+        }
+
+        .slider-dot {
+          width: 8px;
+          height: 8px;
         }
 
         .whatsapp-float {
-          width: 55px;
-          height: 55px;
-          bottom: 20px;
-          right: 20px;
-          font-size: 25px;
+          width: 50px;
+          height: 50px;
+          bottom: 15px;
+          right: 15px;
+          font-size: 24px;
         }
 
         .whatsapp-text {
-          bottom: 80px;
-          right: 20px;
+          bottom: 70px;
+          right: 15px;
           font-size: 12px;
-        }
-
-        .map-container {
-          height: 300px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .slider-container {
-          height: 70vh;
-        }
-
-        .slider-nav {
-          width: 45px;
-          height: 45px;
+          padding: 6px 12px;
         }
 
         .map-container {
           height: 250px;
         }
+      }
+
+      /* Ensure images don't overflow on mobile */
+      img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </head>
@@ -526,6 +656,7 @@
         </div>
       </div>
 
+      <!-- Hero Content (commented out in original) -->
       <!-- <div class="hero-content">
         <div class="container mx-auto px-4 text-center text-white">
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -546,16 +677,18 @@
               >Get In Touch</a
             >
           </div>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
     </section>
 
+    <!-- Rest of your HTML content remains exactly the same -->
     <!-- About Us Section -->
     <section
       id="about"
       class="section bg-gray-50 dark:bg-gray-800 py-16 md:py-24"
     >
-      <div class="container mx-auto px-4">
+      <!-- ... your existing about section content ... -->
+         <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
             class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
@@ -686,7 +819,8 @@
 
     <!-- Services Section -->
     <section id="services" class="section py-16 md:py-24">
-      <div class="container mx-auto px-4">
+      <!-- ... your existing services section content ... -->
+        <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
             class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
@@ -900,7 +1034,6 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="bg-gray-50 dark:bg-gray-800 py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
@@ -1506,7 +1639,7 @@
                 class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
               >
                 <span id="submit-text">Send Message</span>
-                <div id="submit-loading" class="loading ml-2 hidden"></div>
+                <!-- <div id="submit-loading" class="loading ml-2 hidden"></div> -->
               </button>
               <div
                 id="form-message"
@@ -1671,7 +1804,6 @@
         </div>
       </div>
     </div>
-
     <!-- WhatsApp Floating Button -->
     <a
       href="https://wa.me/971559263117"
