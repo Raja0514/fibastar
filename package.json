@@ -1,11 +1,10 @@
-
 {
   "name": "fibastar-website",
   "version": "1.0.0",
   "scripts": {
-    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npm run build",
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build-css": "tailwindcss -i ./src/input.css -o ./output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./output.css",
+    "dev": "tailwindcss -i ./src/input.css -o ./output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
