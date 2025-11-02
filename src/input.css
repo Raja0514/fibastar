@@ -43,19 +43,19 @@
   }
 
   .slide-1 {
-    background-image: url("./M200c-4020.png");
+    background-image: url("../public/images/M200c-4020.png");
   }
 
   .slide-2 {
-    background-image: url("./Mach+500+4020_studio_NewLogo.png");
+    background-image: url("../public/images/Mach+500+4020_studio_NewLogo.png");
   }
 
   .slide-3 {
-    background-image: url("./Mach\ 150\ 4020\ Rendering_view\ 1.png");
+    background-image: url("../public/images/Mach\ 150\ 4020\ Rendering_view\ 1.png");
   }
 
   .slide-4 {
-    background-image: url("./M200c-4020.png");
+    background-image: url("../public/images/M200c-4020.png");
   }
 
   .slider-overlay {
