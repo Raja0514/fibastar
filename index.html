@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,57 +22,55 @@
     />
 
     <style>
+      /* FIXED: Better video wrapper for mobile */
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000; /* Black background while loading */
+      }
 
-    /* FIXED: Better video wrapper for mobile */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #000; /* Black background while loading */
-}
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
 
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+      /* FIXED: Mobile-specific video improvements */
+      @media (max-width: 768px) {
+        .video-wrapper {
+          border-radius: 8px; /* Slightly smaller radius on mobile */
+        }
 
-/* FIXED: Mobile-specific video improvements */
-@media (max-width: 768px) {
-  .video-wrapper {
-    border-radius: 8px; /* Slightly smaller radius on mobile */
-  }
-  
-  /* Ensure iframe can be interactive on mobile */
-  iframe {
-    -webkit-overflow-scrolling: touch;
-  }
-}
+        /* Ensure iframe can be interactive on mobile */
+        iframe {
+          -webkit-overflow-scrolling: touch;
+        }
+      }
 
-/* FIXED: Prevent horizontal scrolling on mobile */
-@media (max-width: 480px) {
-  .video-wrapper {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    width: calc(100% + 2rem);
-    border-radius: 0;
-  }
-  
-  .bg-white .video-wrapper,
-  .dark\\:bg-gray-800 .video-wrapper {
-    border-radius: 8px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-}
+      /* FIXED: Prevent horizontal scrolling on mobile */
+      @media (max-width: 480px) {
+        .video-wrapper {
+          margin-left: -1rem;
+          margin-right: -1rem;
+          width: calc(100% + 2rem);
+          border-radius: 0;
+        }
 
+        .bg-white .video-wrapper,
+        .dark\\:bg-gray-800 .video-wrapper {
+          border-radius: 8px;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+      }
 
       /* Add critical CSS here for faster loading */
       .theme-transition * {
@@ -128,29 +125,24 @@
       .slide-1 {
         background-image: url("./M200c-4020.png");
         /* Fallback color if image doesn't load */
-        
       }
 
       .slide-2 {
         background-image: url("./Mach+500+4020_studio_NewLogo.png");
-       
       }
 
       .slide-3 {
         background-image: url("./Mach\ 150\ 4020\ Rendering_view\ 1.png");
-       
       }
 
       .slide-4 {
         background-image: url("./M200c-4020.png");
-  
       }
 
       /* Ensure images scale properly on mobile */
       @media (max-width: 768px) {
         .slide {
           background-size: contain; /* Show full image on mobile */
-         
         }
       }
 
@@ -561,10 +553,10 @@
         <div class="flex justify-between items-center py-4">
           <!-- Logo -->
           <div class="flex items-center">
-            <div
-              class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mr-3"
-            >
-              <span class="text-white font-bold">FS</span>
+            <div class="w-10 h-10 flex items-center justify-center mr-3">
+              <span class="text-white font-bold">
+                <img src="./logo.jpeg" alt="fibastar" />
+              </span>
             </div>
             <span class="text-xl font-bold text-gray-800 dark:text-white"
               >Fiba Star Technical Services L.L.C</span
@@ -740,7 +732,7 @@
       class="section bg-gray-50 dark:bg-gray-800 py-16 md:py-24"
     >
       <!-- ... your existing about section content ... -->
-         <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
             class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
@@ -872,7 +864,7 @@
     <!-- Services Section -->
     <section id="services" class="section py-16 md:py-24">
       <!-- ... your existing services section content ... -->
-        <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
             class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
@@ -1112,12 +1104,15 @@
             <div
               class="h-48 bg-gradient-to-r from-primary-400 to-primary-600 relative overflow-hidden"
             >
+            <img src="./1.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
                 <i class="fas fa-expand text-white text-2xl"></i>
               </div>
             </div>
+
+
             <div class="p-4">
               <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
                 Waterjet Machine
@@ -1135,6 +1130,7 @@
             <div
               class="h-48 bg-gradient-to-r from-green-400 to-blue-500 relative overflow-hidden"
             >
+            <img src="./2.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1158,6 +1154,7 @@
             <div
               class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative overflow-hidden"
             >
+            <img src="./3.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1181,6 +1178,7 @@
             <div
               class="h-48 bg-gradient-to-r from-yellow-400 to-red-500 relative overflow-hidden"
             >
+            <img src="./4.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1204,6 +1202,7 @@
             <div
               class="h-48 bg-gradient-to-r from-indigo-400 to-purple-500 relative overflow-hidden"
             >
+            <img src="./5.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1227,6 +1226,7 @@
             <div
               class="h-48 bg-gradient-to-r from-pink-400 to-red-500 relative overflow-hidden"
             >
+            <img src="./6.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1250,6 +1250,7 @@
             <div
               class="h-48 bg-gradient-to-r from-teal-400 to-blue-500 relative overflow-hidden"
             >
+            <img src="./7.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1273,6 +1274,7 @@
             <div
               class="h-48 bg-gradient-to-r from-orange-400 to-red-500 relative overflow-hidden"
             >
+            <img src="./8.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1296,6 +1298,7 @@
             <div
               class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 relative overflow-hidden"
             >
+            <img src="./9.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1319,6 +1322,7 @@
             <div
               class="h-48 bg-gradient-to-r from-green-400 to-teal-500 relative overflow-hidden"
             >
+            <img src="./10.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1342,6 +1346,7 @@
             <div
               class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 relative overflow-hidden"
             >
+            <img src="./11.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1365,6 +1370,7 @@
             <div
               class="h-48 bg-gradient-to-r from-red-400 to-pink-500 relative overflow-hidden"
             >
+            <img src="./12.jpeg" alt="texture">
               <div
                 class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -1383,74 +1389,87 @@
         </div>
 
         <!-- YouTube Video Section -->
-       <!-- YouTube Video Section -->
-<div class="mt-16">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-      Video Showcase
-    </h2>
-    <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-      Watch our waterjet cutting technology in action and learn more about our services.
-    </p>
-  </div>
+        <!-- YouTube Video Section -->
+        <div class="mt-16">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
+            >
+              Video Showcase
+            </h2>
+            <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Watch our waterjet cutting technology in action and learn more
+              about our services.
+            </p>
+          </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <!-- Video 1 -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg">
-      <h3 class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4">
-        Flow Texturing Cutting Demonstration
-      </h3>
-      <div class="video-wrapper mb-4">
-        <!-- FIXED: YouTube embed with proper mobile attributes -->
-        <iframe
-          src="https://www.youtube.com/embed/m69JzgPCXvw?si=PBXM_6_wC4T_kVsc"
-          title="Flow Texturing Cutting Demonstration"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          style="width: 100%; height: 100%; border: none;"
-        ></iframe>
-      </div>
-      <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-        See how our high-precision waterjet cutting technology works with various materials.
-      </p>
-    </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Video 1 -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
+            >
+              <h3
+                class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4"
+              >
+                Flow Texturing Cutting Demonstration
+              </h3>
+              <div class="video-wrapper mb-4">
+                <!-- FIXED: YouTube embed with proper mobile attributes -->
+                <iframe
+                  src="https://www.youtube.com/embed/m69JzgPCXvw?si=PBXM_6_wC4T_kVsc"
+                  title="Flow Texturing Cutting Demonstration"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  style="width: 100%; height: 100%; border: none"
+                ></iframe>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                See how our high-precision waterjet cutting technology works
+                with various materials.
+              </p>
+            </div>
 
-    <!-- Video 2 -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg">
-      <h3 class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4">
-        Flow - First on Water jet
-      </h3>
-      <div class="video-wrapper mb-4">
-        <!-- FIXED: YouTube embed with proper mobile attributes -->
-        <iframe
-          src="https://www.youtube.com/embed/N_go14XzG4w?si=88FB7ffQ-fptytX-"
-          title="Flow - First on Water jet"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          style="width: 100%; height: 100%; border: none;"
-        ></iframe>
-      </div>
-      <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-        Learn about our comprehensive maintenance procedures for industrial equipment.
-      </p>
-    </div>
-  </div>
+            <!-- Video 2 -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
+            >
+              <h3
+                class="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-4"
+              >
+                Flow - First on Water jet
+              </h3>
+              <div class="video-wrapper mb-4">
+                <!-- FIXED: YouTube embed with proper mobile attributes -->
+                <iframe
+                  src="https://www.youtube.com/embed/N_go14XzG4w?si=88FB7ffQ-fptytX-"
+                  title="Flow - First on Water jet"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  style="width: 100%; height: 100%; border: none"
+                ></iframe>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                Learn about our comprehensive maintenance procedures for
+                industrial equipment.
+              </p>
+            </div>
+          </div>
 
-  <div class="text-center mt-8">
-    <a
-      href="https://www.youtube.com/@FlowWaterjetEurope"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
-    >
-      <i class="fab fa-youtube mr-2"></i>
-      <span>Visit Our YouTube Channel</span>
-    </a>
-  </div>
-</div>
+          <div class="text-center mt-8">
+            <a
+              href="https://www.youtube.com/@FlowWaterjetEurope"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+            >
+              <i class="fab fa-youtube mr-2"></i>
+              <span>Visit Our YouTube Channel</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1478,14 +1497,24 @@
             Find Us
           </h3>
           <div class="map-container">
-            <iframe
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178509825885!2d55.27218741500915!3d25.19719698389345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1645000000000!5m2!1sen!2sae"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Fiba Star Technical Services Location"
             >
-            </iframe>
+            </iframe> -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.924743081266!2d55.31099367437962!3d25.273116928623352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434b48c97ba3%3A0x6545f13425559bbf!2sMohammad%20Zia%20Electronic%20trading%20L.L.C!5e0!3m2!1sen!2som!4v1762095165559!5m2!1sen!2som"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Fiba Star Technical Services Location"
+            ></iframe>
           </div>
         </div>
 
@@ -1693,9 +1722,11 @@
           <div>
             <div class="flex items-center mb-4">
               <div
-                class="w-8 h-8 bg-gradient-to-r from-primary-500 to-purple-600 rounded-lg flex items-center justify-center mr-2"
+                class="w-8 h-8 rounded-lg flex items-center justify-center mr-2"
               >
-                <span class="text-white font-bold">F</span>
+                <span class="text-white font-bold">
+                  <img src="./logo.jpeg" alt="logo" />
+                </span>
               </div>
               <span class="text-xl font-bold">Fiba Star</span>
             </div>
@@ -1840,8 +1871,16 @@
       </div>
     </div>
     <!-- WhatsApp Floating Button -->
-    <a
+    <!-- <a
       href="https://wa.me/971559263117"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Contact us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a> -->
+    <a
+      href="https://wa.me/971559263117?text=Hello%20Fiba%20Star%21%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services."
       class="whatsapp-float"
       target="_blank"
       aria-label="Contact us on WhatsApp"
