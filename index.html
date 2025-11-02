@@ -21,61 +21,88 @@
       content="waterjet cutting, technical services, Flow Europe, industrial maintenance, Dubai"
     />
 
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiba Star Technical Services L.L.C</title>
+    <!-- Use the compiled CSS from your build process -->
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Fiba Star Technical Services - Official ISP of Flow Europe GmbH in Middle East. Precision waterjet cutting, technical maintenance, and engineering solutions."
+    />
+    <meta
+      name="keywords"
+      content="waterjet cutting, technical services, Flow Europe, industrial maintenance, Dubai"
+    />
+
     <style>
       /* FIXED: Better video wrapper for mobile */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #000; /* Black background while loading */
-  -webkit-overflow-scrolling: touch;
-}
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000; /* Black background while loading */
+        -webkit-overflow-scrolling: touch;
+      }
 
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
 
-/* FIXED: Mobile-specific video improvements */
-@media (max-width: 768px) {
-  .video-wrapper {
-    border-radius: 8px;
-    margin: 0; /* Remove any margins that might cause issues */
-  }
-  
-  /* Ensure proper touch scrolling for mobile */
-  .video-wrapper iframe {
-    -webkit-overflow-scrolling: touch;
-  }
-}
+      /* FIXED: Mobile-specific video improvements */
+      @media (max-width: 768px) {
+        .video-wrapper {
+          border-radius: 8px;
+          margin: 0;
+        }
+        
+        .video-wrapper iframe {
+          -webkit-overflow-scrolling: touch;
+        }
+      }
 
-/* FIXED: Extra small device adjustments */
-@media (max-width: 480px) {
-  .video-wrapper {
-    border-radius: 6px;
-  }
-  
-  /* Remove any container padding that might affect video width */
-  .bg-white .video-wrapper,
-  .dark\\:bg-gray-800 .video-wrapper {
-    width: 100%;
-    margin: 0;
-  }
-}
+      /* FIXED: Extra small device adjustments */
+      @media (max-width: 480px) {
+        .video-wrapper {
+          border-radius: 6px;
+        }
+        
+        .bg-white .video-wrapper,
+        .dark\\:bg-gray-800 .video-wrapper {
+          width: 100%;
+          margin: 0;
+        }
+      }
 
-/* FIXED: Ensure videos don't overflow their containers */
-.video-container {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
+      /* Add critical CSS here for faster loading */
+      .theme-transition * {
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      /* FIXED: Mobile Responsive Slider */
+      .slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
 
       /* Mobile-first approach for slider height */
       .slider-container {
@@ -116,7 +143,6 @@
       /* FIXED: Better mobile image handling */
       .slide-1 {
         background-image: url("./M200c-4020.png");
-        /* Fallback color if image doesn't load */
       }
 
       .slide-2 {
@@ -134,7 +160,7 @@
       /* Ensure images scale properly on mobile */
       @media (max-width: 768px) {
         .slide {
-          background-size: contain; /* Show full image on mobile */
+          background-size: contain;
         }
       }
 
@@ -259,54 +285,91 @@
         transform: scale(1.2);
       }
 
-      /* FIXED: Mobile-responsive hero content */
-      .hero-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        width: 90%;
-        text-align: center;
-        padding: 0 1rem;
+      /* FIXED: All Titles Responsive Sizing */
+      .section-title {
+        font-size: 1.75rem; /* Default for mobile */
+        font-weight: bold;
+      }
+
+      .section-subtitle {
+        font-size: 1.25rem; /* Default for mobile */
+        font-weight: bold;
+      }
+
+      .card-title {
+        font-size: 1.125rem; /* Default for mobile */
+        font-weight: bold;
       }
 
       @media (min-width: 768px) {
-        .hero-content {
-          width: 100%;
-          padding: 0;
-        }
-      }
-
-      .hero-content h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .hero-content h1 {
-          font-size: 4rem;
-          margin-bottom: 1.5rem;
+        .section-title {
+          font-size: 2.25rem; /* Tablet */
         }
 
-        .hero-content p {
-          font-size: 1.5rem;
-          margin-bottom: 2rem;
+        .section-subtitle {
+          font-size: 1.5rem; /* Tablet */
+        }
+
+        .card-title {
+          font-size: 1.25rem; /* Tablet */
         }
       }
 
       @media (min-width: 1024px) {
-        .hero-content h1 {
-          font-size: 5rem;
+        .section-title {
+          font-size: 3rem; /* Desktop */
         }
 
-        .hero-content p {
+        .section-subtitle {
+          font-size: 1.875rem; /* Desktop */
+        }
+
+        .card-title {
+          font-size: 1.5rem; /* Desktop */
+        }
+      }
+
+      /* FIXED: Header title responsive sizing */
+      .header-title {
+        font-size: 1.1rem; /* Default for mobile */
+        font-weight: bold;
+        color: #1f2937;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+
+      @media (min-width: 480px) {
+        .header-title {
+          font-size: 1.25rem;
+          max-width: 250px;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .header-title {
+          font-size: 1.5rem;
+          max-width: none;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .header-title {
           font-size: 1.75rem;
+        }
+      }
+
+      /* FIXED: Logo sizing for mobile */
+      .header-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .header-logo {
+          width: 2.5rem;
+          height: 2.5rem;
         }
       }
 
@@ -368,23 +431,6 @@
         width: auto;
         height: auto;
         display: block;
-      }
-
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 12px;
-      }
-
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
       }
 
       .service-card {
@@ -471,14 +517,20 @@
         transform: translateY(0);
       }
 
-      /* FIXED: Map container full width */
+      /* FIXED: Map container for mobile */
       .map-container {
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 300px; /* Smaller for mobile */
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (min-width: 768px) {
+        .map-container {
+          height: 400px; /* Larger for tablet/desktop */
+        }
       }
 
       .map-container iframe {
@@ -499,54 +551,10 @@
         transition: all 0.3s ease-in-out;
       }
 
-      /* FIXED: Header title responsive sizing */
-      .header-title {
-        font-size: 1.1rem; /* Default for mobile */
-        font-weight: bold;
-        color: #1f2937; /* gray-800 */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 200px;
-      }
-
-      @media (min-width: 480px) {
-        .header-title {
-          font-size: 1.25rem; /* sm */
-          max-width: 250px;
-        }
-      }
-
-      @media (min-width: 640px) {
-        .header-title {
-          font-size: 1.5rem; /* lg */
-          max-width: none;
-        }
-      }
-
-      @media (min-width: 768px) {
-        .header-title {
-          font-size: 1.75rem; /* xl */
-        }
-      }
-
-      /* FIXED: Logo sizing for mobile */
-      .header-logo {
-        width: 2.5rem; /* 40px */
-        height: 2.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .header-logo {
-          width: 2.5rem;
-          height: 2.5rem;
-        }
-      }
-
       /* FIXED: Better mobile adjustments */
       @media (max-width: 480px) {
         .slider-container {
-          height: 50vh; /* Even smaller for very small devices */
+          height: 50vh;
         }
 
         .slider-nav {
@@ -606,6 +614,19 @@
           height: 2rem;
           margin-right: 0.5rem;
         }
+
+        /* Smaller section titles for very small devices */
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .section-subtitle {
+          font-size: 1.125rem;
+        }
+
+        .card-title {
+          font-size: 1rem;
+        }
       }
 
       /* Ensure images don't overflow on mobile */
@@ -617,7 +638,7 @@
   </head>
   <body class="bg-white dark:bg-gray-900 theme-transition">
     <!-- Header Section -->
-   <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
           <!-- Logo -->
@@ -716,8 +737,7 @@
         </div>
       </div>
     </header>
-
-    <!-- Home Section -->
+     <!-- Home Section -->
     <section id="home" class="relative">
       <div class="slider-container">
         <div class="slider" id="slider">
@@ -769,15 +789,10 @@
     </section>
 
     <!-- About Us Section -->
-    <section
-      id="about"
-      class="section bg-gray-50 dark:bg-gray-800 py-16 md:py-24"
-    >
+    <section id="about" class="section bg-gray-50 dark:bg-gray-800 py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
-          >
+          <h2 class="section-title text-gray-800 dark:text-white mb-4">
             About Fiba Star
           </h2>
           <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
@@ -785,7 +800,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+            <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
               Waterjet Cutting Specialists
             </h3>
             <p class="text-gray-600 dark:text-gray-300 mb-6">
@@ -808,52 +823,42 @@
 
             <div class="flex items-center space-x-6">
               <div class="text-center">
-                <div
-                  class="text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
+                <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400">
                   8+
                 </div>
-                <div class="text-gray-600 dark:text-gray-300">
+                <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
                   Years Experience
                 </div>
               </div>
               <div class="text-center">
-                <div
-                  class="text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
+                <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400">
                   250+
                 </div>
-                <div class="text-gray-600 dark:text-gray-300">
+                <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
                   Projects Completed
                 </div>
               </div>
               <div class="text-center">
-                <div
-                  class="text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
+                <div class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400">
                   98%
                 </div>
-                <div class="text-gray-600 dark:text-gray-300">
+                <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
                   Client Satisfaction
                 </div>
               </div>
             </div>
           </div>
           <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+            <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
               Our Values
             </h3>
             <div class="space-y-4">
               <div class="flex items-start">
-                <div
-                  class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4"
-                >
-                  <i
-                    class="fas fa-lightbulb text-primary-600 dark:text-primary-400"
-                  ></i>
+                <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                  <i class="fas fa-lightbulb text-primary-600 dark:text-primary-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-gray-800 dark:text-white mb-1">
+                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
                     Innovation
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300">
@@ -864,12 +869,10 @@
               </div>
               <div class="flex items-start">
                 <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg mr-4">
-                  <i
-                    class="fas fa-handshake text-green-600 dark:text-green-400"
-                  ></i>
+                  <i class="fas fa-handshake text-green-600 dark:text-green-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-gray-800 dark:text-white mb-1">
+                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
                     Collaboration
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300">
@@ -879,15 +882,11 @@
                 </div>
               </div>
               <div class="flex items-start">
-                <div
-                  class="bg-purple-100 dark:bg-purple-900 p-3 rounded-lg mr-4"
-                >
-                  <i
-                    class="fas fa-rocket text-purple-600 dark:text-purple-400"
-                  ></i>
+                <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-lg mr-4">
+                  <i class="fas fa-rocket text-purple-600 dark:text-purple-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-gray-800 dark:text-white mb-1">
+                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
                     Excellence
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300">
@@ -901,6 +900,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- Services Section -->
     <section id="services" class="section py-16 md:py-24">
@@ -1538,9 +1538,6 @@
           <div class="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.924743081266!2d55.31099367437962!3d25.273116928623352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434b48c97ba3%3A0x6545f13425559bbf!2sMohammad%20Zia%20Electronic%20trading%20L.L.C!5e0!3m2!1sen!2som!4v1762095165559!5m2!1sen!2som"
-              width="600"
-              height="450"
-              style="border: 0"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
