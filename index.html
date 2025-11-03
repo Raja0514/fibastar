@@ -23,6 +23,66 @@
     />
 
     <style>
+
+       :root {
+            --primary-600: #2563eb;
+            --primary-400: #60a5fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+        
+        .stats-box {
+            transition: transform 0.3s;
+        }
+        
+        .stats-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.5rem;
+            }
+        }
       /* FIXED: Better video wrapper for mobile */
       .video-wrapper {
         position: relative;
@@ -131,9 +191,7 @@
         background-image: url("./Mach\ 150\ 4020\ Rendering_view\ 1.png");
       }
 
-      .slide-4 {
-        background-image: url("./M200c-4020.png");
-      }
+      
 
       /* Ensure images scale properly on mobile */
       @media (max-width: 768px) {
@@ -727,7 +785,7 @@
           <div class="slide slide-1"></div>
           <div class="slide slide-2"></div>
           <div class="slide slide-3"></div>
-          <div class="slide slide-4"></div>
+          <!-- <div class="slide slide-4"></div> -->
         </div>
         <div class="slider-overlay"></div>
 
@@ -762,170 +820,114 @@
             data-slide="2"
             aria-label="Go to slide 3"
           ></button>
-          <button
+          <!-- <button
             class="slider-dot"
             data-slide="3"
             aria-label="Go to slide 4"
-          ></button>
+          ></button> -->
         </div>
       </div>
     </section>
 
     <!-- About Us Section -->
-    <section
-      id="about"
-      class="section bg-gray-50 dark:bg-gray-800 py-16 md:py-24"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="section-title text-gray-800 dark:text-white mb-4">
-            About Fiba Star
-          </h2>
-          <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
-              Waterjet Cutting Specialists
-            </h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-6">
-              Waterjet cutting technology is one of the fastest growing major
-              machine tool processes in the world due to its versatility and
-              ease of operation. There are virtually no limits to what waterjets
-              can cut, which is why companies of all kinds and sizes are
-              realizing greater efficiency and productivity by implementing UHP
-              waterjets in their operations.
-            </p>
-
-            <p class="text-gray-600 dark:text-gray-300 mb-6">
-              Flow waterjets enable you to cut a variety of applications with
-              ease. Whatever the shape, dimensions, or material, our easy-to-use
-              software makes the job easy. Fiba Star Technical Services is the
-              ISP (Integrated Service Partner) of Flow Europe GmbH in the entire
-              Middle East. Our Service Technicians are trained and certified by
-              Flow Europe GmbH for servicing Flow equipments.
-            </p>
-
-            <div class="flex items-center space-x-6">
-              <div class="text-center">
-                <div
-                  class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
-                  8+
-                </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm md:text-base"
-                >
-                  Years Experience
-                </div>
-              </div>
-              <div class="text-center">
-                <div
-                  class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
-                  250+
-                </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm md:text-base"
-                >
-                  Projects Completed
-                </div>
-              </div>
-              <div class="text-center">
-                <div
-                  class="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400"
-                >
-                  98%
-                </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm md:text-base"
-                >
-                  Client Satisfaction
-                </div>
-              </div>
+ <section id="about" class="section bg-gray-50 dark:bg-gray-800 py-8 md:py-14">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-11">
+                <h2 class="section-title text-gray-800 dark:text-white mb-4">
+                    About Fiba Star
+                </h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
+                
             </div>
-          </div>
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
-            <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
-              Our Values
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-start">
-                <div
-                  class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4"
-                >
-                  <i
-                    class="fas fa-lightbulb text-primary-600 dark:text-primary-400"
-                  ></i>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch">
+                <!-- Left Content - 3/4 width -->
+                <div class="lg:col-span-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
+                            A Few Words About Us
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Waterjet cutting technology is one of the fastest growing major
+                            machine tool processes in the world due to its versatility and
+                            ease of operation.
+                        </p>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            There are virtually no limits to what waterjets can cut, which is
+                            why companies of all kinds and sizes are realizing greater
+                            efficiency and productivity by implementing UHP waterjets in their
+                            operations.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Flow waterjets enable you to cut a variety of applications with
+                            ease. Whatever the shape, dimensions, or material, our easy-to-use
+                            software makes the job easy.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Fiba Star Technical Services - ISP (Integrated Service Partner) of
+                            Flow Europe GmbH in the entire Middle East. We are having the
+                            Service Technicians, trained and certified by the Flow Europe GmbH
+                            for servicing the Flow equipments.
+                        </p>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                8+
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Years Experience
+                            </div>
+                        </div>
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                250+
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Projects Completed
+                            </div>
+                        </div>
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                98%
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Client Satisfaction
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-                <div>
-                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
-                    Innovation
-                  </h4>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    We constantly explore new technologies and approaches to
-                    deliver cutting-edge solutions.
-                  </p>
+                
+                <!-- Right Logo - 1/4 width -->
+                <div class="bg-white   dark:bg-[#1f2937] rounded-xl  shadow-lg h-full flex items-center justify-center">
+                    <div class="logo-container w-full">
+                     <img src="./logo.jpeg" alt="logo" class="h-full w-full object-contain">
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-start">
-                <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg mr-4">
-                  <i
-                    class="fas fa-handshake text-green-600 dark:text-green-400"
-                  ></i>
-                </div>
-                <div>
-                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
-                    Collaboration
-                  </h4>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    We work closely with our clients, treating their goals as
-                    our own.
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div
-                  class="bg-purple-100 dark:bg-purple-900 p-3 rounded-lg mr-4"
-                >
-                  <i
-                    class="fas fa-rocket text-purple-600 dark:text-purple-400"
-                  ></i>
-                </div>
-                <div>
-                  <h4 class="card-title text-gray-800 dark:text-white mb-1">
-                    Excellence
-                  </h4>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    We're committed to delivering the highest quality in
-                    everything we do.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section py-16 md:py-24">
+    <section id="services" class="section py-8 md:py-14">
       <div class="container mx-auto px-4">
         <!-- Services Gallery Section -->
         <div class="mt-5">
-          <div class="text-center mb-12">
+          <div class="text-center mb-8">
             <h2 class="section-title text-gray-800 dark:text-white mb-4">
               Our Work in Action
             </h2>
-            <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <div class="w-20 h-1 bg-primary-600 mx-auto mb-2"></div>
+            <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               See our technical services and waterjet cutting solutions through
               real project examples.
-            </p>
+            </p> -->
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Service gallery images with updated titles -->
             <div
               class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
@@ -946,10 +948,11 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  waterjet Pump
+                 Installation
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
+              Flow Waterjets Mach2, Mach3 and the latest Mach4 Series
                 </p>
               </div>
             </div>
@@ -972,67 +975,18 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Waterjet Pump
+                 Inspection
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
+               Project management to Technical Support
                 </p>
               </div>
             </div>
 
-            <div
-              class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-              data-image="./c.jpeg"
-              data-title="Waterjet Cutting Machine"
-            >
-              <div class="h-48 relative overflow-hidden">
-                <img
-                  src="./c.jpeg"
-                  alt="Waterjet Cutting Machine"
-                  class="gallery-image"
-                />
-                <div
-                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <i class="fas fa-expand text-white text-2xl"></i>
-                </div>
-              </div>
-              <div class="p-4">
-                <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Waterjet Pump
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
-                </p>
-              </div>
-            </div>
+           
 
-            <div
-              class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-              data-image="./e.jpeg"
-              data-title="Waterjet Cutting Machine"
-            >
-              <div class="h-48 relative overflow-hidden">
-                <img
-                  src="./e.jpeg"
-                  alt="Waterjet Cutting Machine"
-                  class="gallery-image"
-                />
-                <div
-                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <i class="fas fa-expand text-white text-2xl"></i>
-                </div>
-              </div>
-              <div class="p-4">
-                <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Waterjet Cutting Machine
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
-                </p>
-              </div>
-            </div>
+           
 
             <div
               class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
@@ -1053,10 +1007,11 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Waterjet Cutting Machine
+                  UHP Pump Service
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
+             Direct Drive, Intensifier & Hyperjet
                 </p>
               </div>
             </div>
@@ -1080,10 +1035,11 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Waterjet Cutting Machine
+                  Software Training
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  High-precision waterjet cutting equipment in operation
+                  To achieve the highest level of efficiency and satisfaction
                 </p>
               </div>
             </div>
@@ -1095,340 +1051,261 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="bg-gray-50 dark:bg-gray-800 py-16 md:py-24">
+    <section id="gallery" class="bg-gray-50 dark:bg-gray-800 py-8 md:py-14">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="section-title text-gray-800 dark:text-white mb-4">
-            Our Gallery
+            Our Texture Gallery
           </h2>
           <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Explore our work through images showcasing our waterjet cutting
             technology and technical services.
-          </p>
+          </p> -->
         </div>
 
         <!-- Gallery grid with updated titles -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
-        >
-          <!-- Gallery items with card-title class -->
-          <!-- Image 1 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./1.jpeg"
-            data-title="Waterjet Machine"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./1.jpeg"
-                alt="Waterjet Machine"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Waterjet Machine
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                High-precision waterjet cutting equipment
-              </p>
-            </div>
-          </div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+  <!-- Image 1 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./1.jpeg"
+    data-title="Waterjet Machine"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./1.jpeg"
+        alt="Waterjet Machine"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 2 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./2.jpeg"
-            data-title="Metal Cutting"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img src="./2.jpeg" alt="Metal Cutting" class="gallery-image" />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Metal Cutting
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Precision cutting of metal materials
-              </p>
-            </div>
-          </div>
+  <!-- Image 2 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./2.jpeg"
+    data-title="Metal Cutting"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./2.jpeg" 
+        alt="Metal Cutting" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 3 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./3.jpeg"
-            data-title="Technical Maintenance"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./3.jpeg"
-                alt="Technical Maintenance"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Technical Maintenance
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Regular maintenance of industrial equipment
-              </p>
-            </div>
-          </div>
+  <!-- Image 3 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./3.jpeg"
+    data-title="Technical Maintenance"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./3.jpeg"
+        alt="Technical Maintenance"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 4 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./4.jpeg"
-            data-title="Installation"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img src="./4.jpeg" alt="Installation" class="gallery-image" />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Installation
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Professional equipment installation
-              </p>
-            </div>
-          </div>
+  <!-- Image 4 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./4.jpeg"
+    data-title="Installation"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./4.jpeg" 
+        alt="Installation" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 5 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./5.jpeg"
-            data-title="Precision Work"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img src="./5.jpeg" alt="Precision Work" class="gallery-image" />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Precision Work
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                High-accuracy cutting results
-              </p>
-            </div>
-          </div>
+  <!-- Image 5 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./5.jpeg"
+    data-title="Precision Work"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./5.jpeg" 
+        alt="Precision Work" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 6 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./6.jpeg"
-            data-title="Industrial Equipment"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./6.jpeg"
-                alt="Industrial Equipment"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Industrial Equipment
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                State-of-the-art machinery
-              </p>
-            </div>
-          </div>
+  <!-- Image 6 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./6.jpeg"
+    data-title="Industrial Equipment"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./6.jpeg"
+        alt="Industrial Equipment"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 7 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./7.jpeg"
-            data-title="Expert Team"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img src="./7.jpeg" alt="Expert Team" class="gallery-image" />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Expert Team
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Our skilled technical team
-              </p>
-            </div>
-          </div>
+  <!-- Image 7 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./7.jpeg"
+    data-title="Expert Team"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./7.jpeg" 
+        alt="Expert Team" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 8 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./8.jpeg"
-            data-title="Finished Products"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./8.jpeg"
-                alt="Finished Products"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Finished Products
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                High-quality finished components
-              </p>
-            </div>
-          </div>
+  <!-- Image 8 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./8.jpeg"
+    data-title="Finished Products"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./8.jpeg"
+        alt="Finished Products"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 9 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./9.jpeg"
-            data-title="Quality Control"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img src="./9.jpeg" alt="Quality Control" class="gallery-image" />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Quality Control
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Rigorous quality assurance processes
-              </p>
-            </div>
-          </div>
+  <!-- Image 9 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./9.jpeg"
+    data-title="Quality Control"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./9.jpeg" 
+        alt="Quality Control" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 10 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./10.jpeg"
-            data-title="Custom Solutions"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./10.jpeg"
-                alt="Custom Solutions"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Custom Solutions
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Tailored technical solutions
-              </p>
-            </div>
-          </div>
+  <!-- Image 10 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./10.jpeg"
+    data-title="Custom Solutions"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./10.jpeg"
+        alt="Custom Solutions"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 11 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./11.jpeg"
-            data-title="Project Management"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./11.jpeg"
-                alt="Project Management"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Project Management
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Efficient project coordination
-              </p>
-            </div>
-          </div>
+  <!-- Image 11 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./11.jpeg"
+    data-title="Project Management"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./11.jpeg"
+        alt="Project Management"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 12 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./12.jpeg"
-            data-title="Client Collaboration"
-          >
-            <div class="h-48 relative overflow-hidden">
-              <img
-                src="./12.jpeg"
-                alt="Client Collaboration"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                Client Collaboration
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Working closely with our clients
-              </p>
-            </div>
-          </div>
-        </div>
+  <!-- Image 12 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./12.jpeg"
+    data-title="Client Collaboration"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./12.jpeg"
+        alt="Client Collaboration"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- YouTube Video Section -->
         <div class="mt-16">
@@ -1437,10 +1314,10 @@
               Video Showcase
             </h2>
             <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Watch our waterjet cutting technology in action and learn more
               about our services.
-            </p>
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1449,7 +1326,7 @@
               class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
             >
               <h3 class="card-title text-gray-800 dark:text-white mb-4">
-                Flow Texturing Cutting Demonstration
+                Flow Texturing  Demonstration
               </h3>
               <div class="video-wrapper mb-4">
                 <iframe
@@ -1499,7 +1376,7 @@
               class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
             >
               <i class="fab fa-youtube mr-2"></i>
-              <span>Visit Our YouTube Channel</span>
+              <span>Visit Our Flow Europe </span>
             </a>
           </div>
         </div>
@@ -1516,10 +1393,10 @@
             Get In Touch
           </h2>
           <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Ready to start your next project? We'd love to hear from you. Send
             us a message and we'll respond as soon as possible.
-          </p>
+          </p> -->
         </div>
 
         <!-- Map Section - FIXED for mobile -->
@@ -1560,17 +1437,14 @@
                     Our Office
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300">
-                    Fiba Star Technical Services L.L.C 
+                    Fiba Star Technical Services L.L.C
                   </p>
-                   <p class="text-gray-600 dark:text-gray-300">
-                    PO BOX 120846, 
+                  <p class="text-gray-600 dark:text-gray-300">PO BOX 120846,</p>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Office # 105, Al Marii 03, Near Nakheel Center
                   </p>
                   <p class="text-gray-600 dark:text-gray-300">
-                    Office # 105, Al Marii 03, Near Nakheel Center 
-                  </p>
-                   <p class="text-gray-600 dark:text-gray-300">
-                    Deira,
-                     Dubai, United Arab Emirates
+                    Deira, Dubai, United Arab Emirates
                   </p>
                 </div>
               </div>
@@ -2107,7 +1981,7 @@
         const dots = document.querySelectorAll(".slider-dot");
 
         let currentSlide = 0;
-        const totalSlides = 4;
+        const totalSlides = 3;
 
         function goToSlide(slideIndex) {
           currentSlide = slideIndex;
