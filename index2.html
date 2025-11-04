@@ -23,66 +23,66 @@
     />
 
     <style>
-      :root {
-        --primary-600: #2563eb;
-        --primary-400: #60a5fa;
-      }
-      
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        transition: background-color 0.3s, color 0.3s;
-      }
-      
-      .dark {
-        background-color: #1f2937;
-        color: #f9fafb;
-      }
-      
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-      
-      .section-subtitle {
-        font-size: 1.75rem;
-        font-weight: 600;
-      }
-      
-      .stats-box {
-        transition: transform 0.3s;
-      }
-      
-      .stats-box:hover {
-        transform: translateY(-5px);
-      }
-      
-      .logo-container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .logo-placeholder {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem;
-      }
-      
-      @media (max-width: 768px) {
+
+       :root {
+            --primary-600: #2563eb;
+            --primary-400: #60a5fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        
         .section-title {
-          font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
         
         .section-subtitle {
-          font-size: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
         }
-      }
-
+        
+        .stats-box {
+            transition: transform 0.3s;
+        }
+        
+        .stats-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.5rem;
+            }
+        }
       /* FIXED: Better video wrapper for mobile */
       .video-wrapper {
         position: relative;
@@ -190,6 +190,8 @@
       .slide-3 {
         background-image: url("./Mach\ 150\ 4020\ Rendering_view\ 1.png");
       }
+
+      
 
       /* Ensure images scale properly on mobile */
       @media (max-width: 768px) {
@@ -407,13 +409,9 @@
         }
       }
 
-      /* FIXED: Gallery improvements for mobile */
       .gallery-item {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
       }
 
       .gallery-item:hover {
@@ -421,40 +419,11 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       }
 
-      .gallery-image-container {
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-      }
-
       .gallery-image {
         width: 100%;
-        height: 100%;
+        height: 200px;
         object-fit: cover;
         border-radius: 8px 8px 0 0;
-      }
-
-      /* FIXED: Mobile gallery images full display */
-      @media (max-width: 768px) {
-        .gallery-image-container {
-          height: 180px;
-        }
-        
-        .gallery-image {
-          object-fit: cover;
-          background-color: #f8f9fa;
-        }
-        
-        .dark .gallery-image {
-          background-color: #374151;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .gallery-image-container {
-          height: 160px;
-        }
       }
 
       .image-modal {
@@ -618,35 +587,6 @@
         transition: all 0.3s ease-in-out;
       }
 
-      /* FIXED: About Us Section Logo Responsiveness */
-      .about-logo-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem;
-        height: 100%;
-      }
-
-      .about-logo {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        object-fit: contain;
-        border-radius: 0.5rem;
-      }
-
-      @media (max-width: 768px) {
-        .about-logo {
-          max-width: 180px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .about-logo {
-          max-width: 150px;
-        }
-      }
-
       /* FIXED: Better mobile adjustments */
       @media (max-width: 480px) {
         .slider-container {
@@ -693,6 +633,10 @@
 
         .map-container {
           height: 250px;
+        }
+
+        .gallery-image {
+          height: 150px;
         }
 
         /* Extra small devices */
@@ -886,56 +830,85 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="section bg-gray-50 dark:bg-gray-800 py-8 md:py-14">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-11">
-          <h2 class="section-title text-gray-800 dark:text-white mb-4">
-            About Fiba Star
-          </h2>
-          <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch">
-          <!-- Left Content - 3/4 width -->
-          <div class="lg:col-span-3 flex flex-col justify-between">
-            <div>
-              <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
-                A Few Words About Us
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-6">
-                Waterjet cutting technology is one of the fastest growing major
-                machine tool processes in the world due to its versatility and
-                ease of operation.
-              </p>
-
-              <p class="text-gray-600 dark:text-gray-300 mb-6">
-                There are virtually no limits to what waterjets can cut, which is
-                why companies of all kinds and sizes are realizing greater
-                efficiency and productivity by implementing UHP waterjets in their
-                operations.
-              </p>
-              <p class="text-gray-600 dark:text-gray-300 mb-6">
-                Flow waterjets enable you to cut a variety of applications with
-                ease. Whatever the shape, dimensions, or material, our easy-to-use
-                software makes the job easy.
-              </p>
-              <p class="text-gray-600 dark:text-gray-300 mb-6">
-                Fiba Star Technical Services - ISP (Integrated Service Partner) of
-                Flow Europe GmbH in the entire Middle East. We are having the
-                Service Technicians, trained and certified by the Flow Europe GmbH
-                for servicing the Flow equipments.
-              </p>
+ <section id="about" class="section bg-gray-50 dark:bg-gray-800 py-8 md:py-14">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-11">
+                <h2 class="section-title text-gray-800 dark:text-white mb-4">
+                    About Fiba Star
+                </h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
+                
             </div>
-          </div>
-          
-          <!-- Right Logo - 1/4 width -->
-          <div class="bg-white dark:bg-[#1f2937] rounded-xl shadow-lg h-full flex items-center justify-center">
-            <div class="about-logo-container">
-              <img src="./logo.jpeg" alt="logo" class="about-logo">
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch">
+                <!-- Left Content - 3/4 width -->
+                <div class="lg:col-span-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="section-subtitle text-gray-800 dark:text-white mb-6">
+                            A Few Words About Us
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Waterjet cutting technology is one of the fastest growing major
+                            machine tool processes in the world due to its versatility and
+                            ease of operation.
+                        </p>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            There are virtually no limits to what waterjets can cut, which is
+                            why companies of all kinds and sizes are realizing greater
+                            efficiency and productivity by implementing UHP waterjets in their
+                            operations.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Flow waterjets enable you to cut a variety of applications with
+                            ease. Whatever the shape, dimensions, or material, our easy-to-use
+                            software makes the job easy.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Fiba Star Technical Services - ISP (Integrated Service Partner) of
+                            Flow Europe GmbH in the entire Middle East. We are having the
+                            Service Technicians, trained and certified by the Flow Europe GmbH
+                            for servicing the Flow equipments.
+                        </p>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                8+
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Years Experience
+                            </div>
+                        </div>
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                250+
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Projects Completed
+                            </div>
+                        </div>
+                        <div class="stats-box bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                                98%
+                            </div>
+                            <div class="text-gray-600 dark:text-gray-300 text-lg">
+                                Client Satisfaction
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <!-- Right Logo - 1/4 width -->
+                <div class="bg-white   dark:bg-[#1f2937] rounded-xl  shadow-lg h-full flex items-center justify-center">
+                    <div class="logo-container w-full">
+                     <img src="./logo.jpeg" alt="logo" class="h-full w-full object-contain">
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Services Section -->
@@ -948,6 +921,10 @@
               Our Work in Action
             </h2>
             <div class="w-20 h-1 bg-primary-600 mx-auto mb-2"></div>
+            <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              See our technical services and waterjet cutting solutions through
+              real project examples.
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -957,7 +934,7 @@
               data-image="./b.jpeg"
               data-title="Waterjet Cutting Machine"
             >
-              <div class="gallery-image-container">
+              <div class="h-48 relative overflow-hidden">
                 <img
                   src="./b.jpeg"
                   alt="Waterjet Cutting Machine"
@@ -971,10 +948,11 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Installation
+                 Installation
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  Flow Waterjets Mach2, Mach3 and the latest Mach4 Series
+              Flow Waterjets Mach2, Mach3 and the latest Mach4 Series
                 </p>
               </div>
             </div>
@@ -983,7 +961,7 @@
               data-image="./a.jpeg"
               data-title="Waterjet Cutting Machine"
             >
-              <div class="gallery-image-container">
+              <div class="h-48 relative overflow-hidden">
                 <img
                   src="./a.jpeg"
                   alt="Waterjet Cutting Machine"
@@ -997,20 +975,25 @@
               </div>
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
-                  Inspection
+                 Inspection
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  Project management to Technical Support
+               Project management to Technical Support
                 </p>
               </div>
             </div>
+
+           
+
+           
 
             <div
               class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
               data-image="./f.jpeg"
               data-title="Waterjet Cutting Machine"
             >
-              <div class="gallery-image-container">
+              <div class="h-48 relative overflow-hidden">
                 <img
                   src="./f.jpeg"
                   alt="Waterjet Cutting Machine"
@@ -1025,9 +1008,10 @@
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
                   UHP Pump Service
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
-                  Direct Drive, Intensifier & Hyperjet
+             Direct Drive, Intensifier & Hyperjet
                 </p>
               </div>
             </div>
@@ -1037,7 +1021,7 @@
               data-image="./h.jpeg"
               data-title="Waterjet Cutting Machine"
             >
-              <div class="gallery-image-container">
+              <div class="h-48 relative overflow-hidden">
                 <img
                   src="./h.jpeg"
                   alt="Waterjet Cutting Machine"
@@ -1052,12 +1036,15 @@
               <div class="p-4">
                 <h3 class="card-title text-gray-800 dark:text-white mb-2">
                   Software Training
+
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 text-sm">
                   To achieve the highest level of efficiency and satisfaction
                 </p>
               </div>
             </div>
+
+            <!-- Other gallery items with same pattern... -->
           </div>
         </div>
       </div>
@@ -1071,250 +1058,254 @@
             Our Texture Gallery
           </h2>
           <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+          <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Explore our work through images showcasing our waterjet cutting
+            technology and technical services.
+          </p> -->
         </div>
 
         <!-- Gallery grid with updated titles -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-          <!-- Image 1 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./1.jpeg"
-            data-title="Waterjet Machine"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./1.jpeg"
-                alt="Waterjet Machine"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+  <!-- Image 1 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./1.jpeg"
+    data-title="Waterjet Machine"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./1.jpeg"
+        alt="Waterjet Machine"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 2 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./2.jpeg"
-            data-title="Metal Cutting"
-          >
-            <div class="gallery-image-container">
-              <img 
-                src="./2.jpeg" 
-                alt="Metal Cutting" 
-                class="gallery-image" 
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 2 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./2.jpeg"
+    data-title="Metal Cutting"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./2.jpeg" 
+        alt="Metal Cutting" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 3 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./3.jpeg"
-            data-title="Technical Maintenance"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./3.jpeg"
-                alt="Technical Maintenance"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 3 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./3.jpeg"
+    data-title="Technical Maintenance"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./3.jpeg"
+        alt="Technical Maintenance"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 4 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./4.jpeg"
-            data-title="Installation"
-          >
-            <div class="gallery-image-container">
-              <img 
-                src="./4.jpeg" 
-                alt="Installation" 
-                class="gallery-image" 
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 4 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./4.jpeg"
+    data-title="Installation"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./4.jpeg" 
+        alt="Installation" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 5 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./5.jpeg"
-            data-title="Precision Work"
-          >
-            <div class="gallery-image-container">
-              <img 
-                src="./5.jpeg" 
-                alt="Precision Work" 
-                class="gallery-image" 
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 5 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./5.jpeg"
+    data-title="Precision Work"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./5.jpeg" 
+        alt="Precision Work" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 6 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./6.jpeg"
-            data-title="Industrial Equipment"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./6.jpeg"
-                alt="Industrial Equipment"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 6 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./6.jpeg"
+    data-title="Industrial Equipment"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./6.jpeg"
+        alt="Industrial Equipment"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 7 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./7.jpeg"
-            data-title="Expert Team"
-          >
-            <div class="gallery-image-container">
-              <img 
-                src="./7.jpeg" 
-                alt="Expert Team" 
-                class="gallery-image" 
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 7 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./7.jpeg"
+    data-title="Expert Team"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./7.jpeg" 
+        alt="Expert Team" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 8 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./8.jpeg"
-            data-title="Finished Products"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./8.jpeg"
-                alt="Finished Products"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 8 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./8.jpeg"
+    data-title="Finished Products"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./8.jpeg"
+        alt="Finished Products"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 9 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./9.jpeg"
-            data-title="Quality Control"
-          >
-            <div class="gallery-image-container">
-              <img 
-                src="./9.jpeg" 
-                alt="Quality Control" 
-                class="gallery-image" 
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 9 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./9.jpeg"
+    data-title="Quality Control"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img 
+        src="./9.jpeg" 
+        alt="Quality Control" 
+        class="w-full h-full object-cover gallery-image" 
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 10 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./10.jpeg"
-            data-title="Custom Solutions"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./10.jpeg"
-                alt="Custom Solutions"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 10 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./10.jpeg"
+    data-title="Custom Solutions"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./10.jpeg"
+        alt="Custom Solutions"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 11 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./11.jpeg"
-            data-title="Project Management"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./11.jpeg"
-                alt="Project Management"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
+  <!-- Image 11 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./11.jpeg"
+    data-title="Project Management"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./11.jpeg"
+        alt="Project Management"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
 
-          <!-- Image 12 -->
-          <div
-            class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-            data-image="./12.jpeg"
-            data-title="Client Collaboration"
-          >
-            <div class="gallery-image-container">
-              <img
-                src="./12.jpeg"
-                alt="Client Collaboration"
-                class="gallery-image"
-              />
-              <div
-                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <i class="fas fa-expand text-white text-2xl"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Image 12 -->
+  <div
+    class="gallery-item bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+    data-image="./12.jpeg"
+    data-title="Client Collaboration"
+  >
+    <div class="h-48 relative overflow-hidden">
+      <img
+        src="./12.jpeg"
+        alt="Client Collaboration"
+        class="w-full h-full object-cover gallery-image"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <i class="fas fa-expand text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- YouTube Video Section -->
         <div class="mt-16">
@@ -1323,6 +1314,10 @@
               Video Showcase
             </h2>
             <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Watch our waterjet cutting technology in action and learn more
+              about our services.
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1331,7 +1326,7 @@
               class="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg"
             >
               <h3 class="card-title text-gray-800 dark:text-white mb-4">
-                Flow Texturing Demonstration
+                Flow Texturing  Demonstration
               </h3>
               <div class="video-wrapper mb-4">
                 <iframe
@@ -1398,6 +1393,10 @@
             Get In Touch
           </h2>
           <div class="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+          <!-- <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Ready to start your next project? We'd love to hear from you. Send
+            us a message and we'll respond as soon as possible.
+          </p> -->
         </div>
 
         <!-- Map Section - FIXED for mobile -->
@@ -1408,6 +1407,7 @@
             Find Us
           </h3>
           <div class="map-container">
+            <!-- FIXED: Map without fixed dimensions -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.924743081266!2d55.31099367437962!3d25.273116928623352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434b48c97ba3%3A0x6545f13425559bbf!2sMohammad%20Zia%20Electronic%20trading%20L.L.C!5e0!3m2!1sen!2som!4v1762095165559!5m2!1sen!2som"
               allowfullscreen=""
@@ -1594,7 +1594,7 @@
                   for="message"
                   class="block text-gray-700 dark:text-gray-300 font-medium mb-2"
                   >Message</label
-                  >
+                >
                 <textarea
                   id="message"
                   name="message"
